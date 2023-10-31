@@ -14,7 +14,7 @@
 
         $id = $_GET["id"];
 
-        $sql = "SELECT * FROM alumnos id=" .$id;
+        $sql = "SELECT * FROM alumnos WHERE id=" .$id;
         
         $datos = $conexion->query($sql);
 
@@ -47,7 +47,7 @@
                         <div class="form-group">
                             <label for="">Turno:</label>
                             <select name="turno" class="form-control" required>
-                                <option value="<?php echo $alumno["turno"]; ?>"><?php echo $alumno ["turno"]; ?></option>
+                                <option selected value="<?php echo $alumno["turno"]; ?>"><?php echo $alumno["turno"]; ?></option>
                                 <option value="">Selecciona el turno</option>
                                 <option value="MATUTINO">MATUTINO</option>
                                 <option value="VESPERTINO">VESPERTINO</option>
@@ -57,7 +57,7 @@
                             <label for="">Sexo:</label>
                             <select name="sexo" class="form-control" required>
                                 <option value="">Selecciona el sexo</option>
-                                <option value="<?php echo $alumno["sexo"]; ?>"><?php echo $alumno ["sexo"]; ?></option>
+                                <option selected value="<?php echo $alumno["sexo"]; ?>"><?php echo $alumno["sexo"]; ?></option>
                                 <option value="0">FEMENINO</option>
                                 <option value="1">MASCULINO</option>
                                 <option value="2">Prefiero no decirlo</option>
