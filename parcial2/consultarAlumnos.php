@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultar Alumnos</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="code.jquery.com_jquery-3.7.1.js"></script>
+    <script src="jquery-3.7.1"></script>
 </head>
 <body>
     <?php
@@ -45,7 +45,7 @@
                                     <td><?php echo $registro ["sexo"]; ?></td>
                                     <td>
                                         <a href="" class="btn btn-sm btn-primary">Editar</a>
-                                        <a href="" class="btn btn-sm btn-danger">Eliminar</a>
+                                        <a href="eliminarAlumno.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php } ?>

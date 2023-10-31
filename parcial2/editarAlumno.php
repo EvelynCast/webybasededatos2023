@@ -8,47 +8,63 @@
     <script src="jquery-3.7.1"></script>
 </head>
 <body>
-    <?php include 'menu.php'; ?>
+    <?php 
+        include 'menu.php';
+        include 'conexion.php';
+
+        $id = $_GET["id"];
+
+        $sql = "SELECT * FROM alumnos id=" .$id;
+        
+        $datos = $conexion->query($sql);
+
+        $alumno = $datos->fetch_assoc();
+    ?>
+
+
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h2>Registrar Alumno</h2><hr>
-                    <form action="GuardarRegistro.php" method="POST">
+                    <form action="actualizarRegistro.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $alumno["$id"]; ?>">
                     <div class="form-group">
                             <label for="">Nombre:</label>
-                            <input name="nombre" type="text" class="form-control" placeholder="Teclea el nombre del alumno" required>
+                            <input value="<?php echo $alumno["nombre"]; ?>" name="nombre" type="text" class="form-control" placeholder="Teclea el nombre del alumno" required>
                         </div>
                         <div class="form-group">
                             <label for="">Número de control:</label>
-                            <input name="nc" type="text" class="form-control" placeholder="Teclea el numero de control" required>
+                            <input value="<?php echo $alumno["numero_control"]; ?>" name="nc" type="text" class="form-control" placeholder="Teclea el numero de control" required>
                         </div>
                         <div class="form-group">
                             <label for="">Semestre:</label>
-                            <input name="semestre" type="number" class="form-control" placeholder="Teclea el semestre" required>
+                            <input value="<?php echo $alumno["semestre"]; ?>" name="semestre" type="number" class="form-control" placeholder="Teclea el semestre" required>
                         </div>
                         <div class="form-group">
                             <label for="">Edad:</label>
-                            <input name="edad" type="number" class="form-control" placeholder="Teclea la edad" required>
+                            <input value="<?php echo $alumno["edad"]; ?>" name="edad" type="number" class="form-control" placeholder="Teclea la edad" required>
                         </div>
                         <div class="form-group">
                             <label for="">Turno:</label>
                             <select name="turno" class="form-control" required>
+                                <option value="<?php echo $alumno["turno"]; ?>"><?php echo $alumno ["turno"]; ?></option>
                                 <option value="">Selecciona el turno</option>
-                                <option value="0">MATUTINO</option>
-                                <option value="1">VESPERTINO</option>
+                                <option value="MATUTINO">MATUTINO</option>
+                                <option value="VESPERTINO">VESPERTINO</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="">Sexo:</label>
                             <select name="sexo" class="form-control" required>
                                 <option value="">Selecciona el sexo</option>
+                                <option value="<?php echo $alumno["sexo"]; ?>"><?php echo $alumno ["sexo"]; ?></option>
                                 <option value="0">FEMENINO</option>
                                 <option value="1">MASCULINO</option>
                                 <option value="2">Prefiero no decirlo</option>
                             </select>
-                        </div>
+                        </div><br>
                         <div>
-                            <input type="submit" value="Registrar" class="btn btn-primary" required>
+                            <input type="submit" value="Actualizar" class="btn btn-primary">
                             <a href="consultarAlumnos.php" class="btn btn-danger">Cancelar</a>
                         </div>
                     </form>
