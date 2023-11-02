@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2023 a las 04:05:47
+-- Tiempo de generación: 02-11-2023 a las 03:18:12
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -38,6 +38,16 @@ CREATE TABLE `alumnos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `alumnos`
+--
+
+INSERT INTO `alumnos` (`id`, `nombre`, `numero_control`, `semestre`, `edad`, `turno`, `sexo`) VALUES
+(1, 'Evelyn Melissa Castro Samaniego', '213250610710308', 5, 17, 'Vespertino', 'Femenino'),
+(2, 'Damiela Lizzette Rodríguez Zúñiga', '2132506107102648', 5, 17, 'Matutino', 'Femenino'),
+(3, 'Sergio Octavio López Sainz', '2132506107106872', 5, 17, 'Vespertino', 'Masculino'),
+(4, 'Hasly Kamila Apodaca Morales', '213250610710423', 5, 17, 'Vespertino', 'Femenino');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -55,7 +65,7 @@ ALTER TABLE `alumnos`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

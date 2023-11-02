@@ -20,8 +20,8 @@
         <div class="row">
             <div class="col-12">
                 <?php if($datos->num_rows > 0) { ?>
-
-                    <table>
+                    
+                    <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
