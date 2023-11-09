@@ -30,7 +30,7 @@
                                 <th>Nombre</th>
                                 <th>Semestre</th>
                                 <th>Especialidad</th>
-                                <th>Opcciones</th>
+                                <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,8 +40,9 @@
                                     <td><?php echo $registro["nombre"]; ?></td>
                                     <td><?php echo $registro["semestre"]; ?></td>
                                     <td><?php echo $registro["especialidad"]; ?></td>
-                                        <a href="" class="btn btn-sm btn-primary">Editar</a>
-                                        <a href="" class="btn btn-sm btn-danger">Eliminar</a>
+                                    <td>
+                                        <a href="EditarMateria.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-primary">Editar</a>
+                                        <a href="EliminarMateria.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php } ?>
